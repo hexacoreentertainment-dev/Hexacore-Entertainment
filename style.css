@@ -1,0 +1,1148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --roxo: #3B138C;
+    --roxo-escuro: #3A1B59;
+    --roxo-claro: #9349F2;
+
+    --fundo: #12091d;
+    --fundo-escuro: #0d0615;
+
+    --texto: #f5f2f7;
+    --texto-suave: #c8bdd0;
+
+    --borda: rgba(147, 73, 242, 0.25);
+
+    --dourado: #D4A84F;
+    --dourado-claro: #E7C46A;
+
+    /* Jogo / Download */
+    --vinho: #471829;
+    --vinho-escuro: #30101B;
+    --bege: #A68263;
+    --marrom: #8C6354;
+    --marrom-escuro: #734743;
+    --fundo-jogo: #1b0b12;
+    --texto-suave-jogo: #d7c4b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    position: relative;
+}
+
+.navegacao {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(13, 6, 21, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.ncaixa {
+    width: min(1200px, 90%);
+    margin: auto;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logosite {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logosite span {
+    color: var(--dourado);
+    font-size: 26px;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.logosite:hover span {
+    transform: rotate(30deg) scale(1.1);
+    color: var(--dourado-claro);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+    color: var(--texto-suave);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--dourado);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background: var(--dourado);
+    transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+.bannerhex {
+    width: min(1200px, 90%);
+    margin: 45px auto 0;
+}
+
+.bannerhexacore {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid var(--borda);
+    background: var(--fundo-escuro);
+}
+
+.bannerhexacore img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.bannerhexacore:hover img {
+    transform: scale(1.03);
+}
+
+.efeitobannerhex {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 65px;
+    background: linear-gradient(
+        to top,
+        rgba(13, 6, 21, 0.95),
+        rgba(13, 6, 21, 0.10)
+    );
+}
+
+.efeitobannerhex h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1;
+    margin: 10px 0 20px;
+}
+
+.efeitobannerhex p:last-child {
+    max-width: 650px;
+    color: var(--texto-suave);
+    font-size: 17px;
+}
+
+.titulozinhohex,
+.titulozinhoman,
+.titulozinhodow {
+    color: var(--dourado);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.logohex {
+    width: min(1100px, 90%);
+    margin: 120px auto;
+}
+
+.titulogohex,
+.descpersoman,
+.desenman,
+.mapamana,
+.equipehex,
+.baixajogo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.titulogohex > span,
+.descpersoman > span,
+.desenman > span,
+.mapamana > span,
+.equipehex > span,
+.baixajogo > span {
+    color: var(--dourado);
+    font-size: 34px;
+    line-height: 1;
+}
+
+.titulogohex p,
+.descpersoman p,
+.desenman p,
+.mapamana p,
+.equipehex p,
+.baixajogo p {
+    color: var(--dourado);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.titulogohex h2,
+.descpersoman h2,
+.desenman h2,
+.mapamana h2,
+.equipehex h2,
+.baixajogo h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.1;
+}
+
+.campohex {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.campothex h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.campothex p {
+    color: var(--texto-suave);
+    margin-bottom: 18px;
+}
+
+.fotologohex {
+    min-height: 320px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        145deg,
+        rgba(59, 19, 140, 0.75),
+        rgba(58, 27, 89, 0.75)
+    );
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
+}
+
+.fotologohex:hover {
+    border-color: var(--roxo-claro);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(59, 19, 140, 0.35);
+}
+
+.fotologohex img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: 0.4s;
+}
+
+.fotologohex:hover img {
+    transform: scale(1.04);
+}
+
+.pagprohex {
+    width: 100%;
+    padding: 110px 6%;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+}
+
+.pagprochex {
+    width: min(900px, 90%);
+    margin: auto;
+    text-align: center;
+}
+
+.pagprochex .titulozinhohex {
+    margin-bottom: 10px;
+}
+
+.pagprochex h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 15px;
+}
+
+.pagprochex p:not(.titulozinhohex) {
+    color: #e3d9eb;
+    margin-bottom: 30px;
+}
+
+.botaopagjogo,
+.botaodownload {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 24px;
+    border: 1px solid var(--dourado);
+    border-radius: 10px;
+    color: var(--texto);
+    background: rgba(212, 168, 79, 0.08);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.botaopagjogo span,
+.botaodownload span {
+    color: var(--dourado);
+    font-size: 20px;
+}
+
+.botaopagjogo:hover,
+.botaodownload:hover {
+    background: var(--dourado);
+    color: #160d06;
+    transform: translateY(-3px);
+}
+
+.botaopagjogo:hover span,
+.botaodownload:hover span {
+    color: #160d06;
+}
+
+.paginaman {
+    background: var(--fundo-jogo);
+    color: #f4eee9;
+}
+
+.paginaman .navegacao,
+.paginadownload .navegacao {
+    background: rgba(48, 16, 27, 0.94);
+    border-bottom-color: rgba(166, 130, 99, 0.25);
+}
+
+.paginaman nav a,
+.paginadownload nav a {
+    color: #d8c7bb;
+}
+
+.paginaman nav a:hover,
+.paginaman nav a.active,
+.paginadownload nav a:hover,
+.paginadownload nav a.active {
+    color: var(--bege);
+}
+
+.paginaman nav a::after,
+.paginadownload nav a::after {
+    background: var(--bege);
+}
+
+.bannerman {
+    width: min(1200px, 90%);
+    margin: 45px auto 0;
+}
+
+.bannermanor {
+    position: relative;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(166, 130, 99, 0.25);
+    background: #170a0f;
+}
+
+.bannermanor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.bannermanor:hover img {
+    transform: scale(1.03);
+}
+
+.efeitobannerman {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 65px;
+    background: linear-gradient(
+        to top,
+        rgba(31, 9, 17, 0.96),
+        rgba(31, 9, 17, 0.08)
+    );
+}
+
+.efeitobannerman h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1;
+    margin: 10px 0 20px;
+}
+
+.efeitobannerman p:last-child {
+    max-width: 720px;
+    color: var(--texto-suave-jogo);
+    font-size: 17px;
+}
+
+.logoman,
+.desenvolvimentoman {
+    width: min(1100px, 90%);
+    margin: 120px auto;
+}
+
+.titulogoman {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.titulogoman > span {
+    color: var(--dourado);
+    font-size: 34px;
+}
+
+.titulogoman p,
+.desenjogo,
+.mapamana p {
+    color: var(--bege);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.titulogoman h2,
+.mapamana h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.1;
+}
+
+.signifman {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.signifman h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.signifman p {
+    color: var(--texto-suave-jogo);
+    margin-bottom: 18px;
+}
+
+.fotologoman {
+    min-height: 320px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(166, 130, 99, 0.08);
+    border: 1px solid rgba(166, 130, 99, 0.25);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.fotologoman:hover {
+    border-color: var(--bege);
+    transform: translateY(-5px);
+}
+
+.fotologoman img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.pesonaman {
+    width: 100%;
+    padding: 120px 6%;
+    background: linear-gradient(135deg, #30101b, #471829);
+}
+
+.descpersoman {
+    width: min(1100px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.personagemman {
+    width: min(1100px, 90%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.cardalexandre,
+.cardalex,
+.cardalexis {
+    overflow: hidden;
+    background: #241017;
+    border: 1px solid rgba(166, 130, 99, 0.25);
+    border-radius: 18px;
+    transition: 0.4s;
+}
+
+.cardalexandre:hover,
+.cardalex:hover,
+.cardalexis:hover {
+    transform: translateY(-8px);
+    border-color: var(--bege);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30);
+}
+
+.imgalexandre,
+.imgalex,
+.imgalexis {
+    height: 390px;
+    overflow: hidden;
+    background: #170a0f;
+}
+
+.imgalexandre img,
+.imgalex img,
+.imgalexis img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.cardalexandre:hover img,
+.cardalex:hover img,
+.cardalexis:hover img {
+    transform: scale(1.05);
+}
+
+.descalexandre,
+.descalex,
+.descalexis {
+    padding: 25px;
+}
+
+.descalexandre span,
+.descalex span,
+.descalexis span {
+    color: var(--bege);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.descalexandre h3,
+.descalex h3,
+.descalexis h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    margin: 8px 0 12px;
+}
+
+.descalexandre p,
+.descalex p,
+.descalexis p {
+    color: var(--texto-suave-jogo);
+    font-size: 14px;
+}
+
+.desenvolvimentoman {
+    margin-bottom: 120px;
+}
+
+.desenman {
+    margin-bottom: 0;
+}
+
+.desenvolvimentojogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.desenvolvimentoa,
+.desenvolvimentob,
+.desenvolvimentoc {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    background: #170a0f;
+    border: 1px solid rgba(166, 130, 99, 0.25);
+    border-radius: 18px;
+    transition: 0.4s;
+}
+
+.desenvolvimentoa {
+    grid-row: span 2;
+    min-height: 625px;
+}
+
+.desenvolvimentoa:hover,
+.desenvolvimentob:hover,
+.desenvolvimentoc:hover {
+    border-color: var(--bege);
+    transform: translateY(-5px);
+}
+
+.desenvolvimentoa img,
+.desenvolvimentob img,
+.desenvolvimentoc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.desenvolvimentoa:hover img,
+.desenvolvimentob:hover img,
+.desenvolvimentoc:hover img {
+    transform: scale(1.04);
+}
+
+.desenvolvimentoa::after,
+.desenvolvimentob::after,
+.desenvolvimentoc::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(13, 6, 21, 0.95),
+        transparent 60%
+    );
+}
+
+.desenvolvimentoa > div,
+.desenvolvimentob > div,
+.desenvolvimentoc > div {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+    z-index: 2;
+}
+
+.desenvolvimentoa span,
+.desenvolvimentob span,
+.desenvolvimentoc span {
+    color: var(--bege);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.desenvolvimentoa h3,
+.desenvolvimentob h3,
+.desenvolvimentoc h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.mapaman {
+    width: 100%;
+    padding: 120px 6%;
+    background: #30101b;
+}
+
+.mapamana {
+    width: min(1100px, 90%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mapamano {
+    width: min(1100px, 90%);
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mapamanb {
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(166, 130, 99, 0.25);
+}
+
+.mapamanb img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.mapamanb:hover img {
+    transform: scale(1.04);
+}
+
+.mapatexto h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.mapatexto p {
+    color: var(--texto-suave-jogo);
+    margin-bottom: 18px;
+}
+
+.desenvolvedores {
+    width: min(1100px, 90%);
+    margin: 120px auto;
+}
+
+.descricaoequipe {
+    max-width: 800px;
+    color: var(--texto-suave);
+    margin-top: -20px;
+    margin-bottom: 55px;
+}
+
+.desenvolhex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.alan,
+.gaby,
+.grazi {
+    overflow: hidden;
+    background: #170a22;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    transition: 0.4s;
+}
+
+.alan:hover,
+.gaby:hover,
+.grazi:hover {
+    transform: translateY(-8px);
+    border-color: var(--dourado);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30);
+}
+
+.fotoalan,
+.fotogaby,
+.fotograzi {
+    height: 390px;
+    overflow: hidden;
+    background: var(--fundo-escuro);
+}
+
+.fotoalan img,
+.fotogaby img,
+.fotograzi img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.alan:hover img,
+.gaby:hover img,
+.grazi:hover img {
+    transform: scale(1.05);
+}
+
+.descalan,
+.descgaby,
+.descgrazi {
+    padding: 25px;
+}
+
+.descalan h3,
+.descgaby h3,
+.descgrazi h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.descalan p,
+.descgaby p,
+.descgrazi p {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.paginadownload {
+    background: var(--fundo-jogo);
+}
+
+.downloadjogo {
+    width: min(900px, 90%);
+    margin: 120px auto 80px;
+    text-align: center;
+}
+
+.baixajogo {
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.incentivadownload {
+    max-width: 750px;
+    margin: auto;
+    color: var(--texto-suave-jogo);
+}
+
+.rediricionamento {
+    width: 100%;
+    padding: 100px 6%;
+    background: linear-gradient(135deg, #30101b, #471829);
+}
+
+.caixadownload {
+    width: min(800px, 90%);
+    margin: auto;
+    padding: 65px 50px;
+    text-align: center;
+    background: rgba(166, 130, 99, 0.08);
+    border: 1px solid rgba(166, 130, 99, 0.25);
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.simbolodownload {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 25px;
+    color: var(--dourado);
+    border: 1px solid rgba(166, 130, 99, 0.35);
+    border-radius: 16px;
+    font-size: 34px;
+}
+
+.caixadownload h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(35px, 5vw, 55px);
+    margin: 8px 0 15px;
+}
+
+.caixadownload > p:not(.titulozinhodow) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--texto-suave-jogo);
+}
+
+.botaodownload {
+    border-color: var(--bege);
+}
+
+footer {
+    padding: 50px 6%;
+    background: #09040e;
+    border-top: 1px solid var(--borda);
+}
+
+.chamanos,
+.chamanosman {
+    width: min(1100px, 90%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.chamanos h3,
+.chamanosman h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--dourado);
+    margin-bottom: 5px;
+}
+
+.chamanos p,
+.chamanosman p {
+    color: #918598;
+    font-size: 13px;
+}
+
+.paginaman footer,
+.paginadownload footer {
+    background: #30101B;
+    border-top-color: rgba(166, 130, 99, 0.25);
+}
+
+.paginaman footer p,
+.paginadownload footer p {
+    color: var(--texto-suave-jogo);
+}
+
+.fade-element {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-element.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+    .ncaixa {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bannerhex,
+    .bannerman {
+        margin-top: 25px;
+    }
+
+    .bannerhexacore,
+    .bannermanor {
+        height: 350px;
+    }
+
+    .efeitobannerhex,
+    .efeitobannerman {
+        padding: 35px;
+    }
+
+    .campohex,
+    .signifman,
+    .mapamano {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .personagemman,
+    .desenvolhex {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .desenvolvimentojogo {
+        grid-template-columns: 1fr;
+    }
+
+    .desenvolvimentoa {
+        grid-row: auto;
+        min-height: 400px;
+    }
+
+    .chamanos,
+    .chamanosman {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 500px) {
+    .ncaixa {
+        width: 92%;
+    }
+
+    .logosite {
+        font-size: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .bannerhex,
+    .bannerman {
+        width: 94%;
+    }
+
+    .bannerhexacore,
+    .bannermanor {
+        height: 300px;
+        border-radius: 18px;
+    }
+
+    .efeitobannerhex,
+    .efeitobannerman {
+        padding: 25px;
+    }
+
+    .efeitobannerhex h1,
+    .efeitobannerman h1 {
+        font-size: 40px;
+    }
+
+    .efeitobannerhex p:last-child,
+    .efeitobannerman p:last-child {
+        font-size: 14px;
+    }
+
+    .logohex,
+    .logoman,
+    .desenvolvimentoman,
+    .desenvolvedores {
+        width: 90%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .titulogohex,
+    .titulogoman,
+    .descpersoman,
+    .desenman,
+    .mapamana,
+    .equipehex,
+    .baixajogo {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .titulogohex > span,
+    .titulogoman > span,
+    .descpersoman > span,
+    .desenman > span,
+    .mapamana > span,
+    .equipehex > span,
+    .baixajogo > span {
+        font-size: 24px;
+    }
+
+    .titulogohex h2,
+    .titulogoman h2,
+    .descpersoman h2,
+    .desenman h2,
+    .mapamana h2,
+    .equipehex h2,
+    .baixajogo h2 {
+        font-size: 32px;
+    }
+
+    .personagemman,
+    .desenvolhex {
+        grid-template-columns: 1fr;
+    }
+
+    .imgalexandre,
+    .imgalex,
+    .imgalexis,
+    .fotoalan,
+    .fotogaby,
+    .fotograzi {
+        height: 350px;
+    }
+
+    .pesonaman,
+    .mapaman,
+    .rediricionamento,
+    .pagprohex {
+        padding: 80px 5%;
+    }
+
+    .fotologohex,
+    .fotologoman {
+        min-height: 280px;
+        padding: 0;
+    }
+
+    .fotologohex img,
+    .fotologoman img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .caixadownload {
+        padding: 50px 25px;
+    }
+
+    .caixadownload h2 {
+        font-size: 38px;
+    }
+
+    .chamanos,
+    .chamanosman {
+        width: 90%;
+    }
+}
